@@ -1,20 +1,29 @@
-import Link from 'next/link';
-import React from 'react';
 import { api } from '../../base/api';
-import { useRouter } from 'next/router';
 import { TBootcamps } from '../../types/bootcamp';
+import { Card } from 'flowbite-react';
+import { MouseEventHandler } from 'react';
 
 const BootCamps = ({ bootcamps }: TBootcamps) => {
-  const location = useRouter();
-
+  const handleCheckbox = (event: any) => {
+    console.log(event.target.checked);
+  };
   return (
-    <div>
-      {bootcamps?.map((bootcamp) => (
-        <Link href={`/${location.pathname}/${bootcamp._id}`}>
-          {bootcamp.name}
-        </Link>
-      ))}
-    </div>
+    <section className='grid row-span-2 col-span-2 grid-cols-1 md:grid-cols-2 gap-4 p-4 lg:p-6'>
+      <div>
+        <input type='checkbox' onClick={handleCheckbox} />
+      </div>
+      <div>
+        {bootcamps
+          ?.sort((a, b) => (a.name > b.name ? 1 : -1))
+          .map((bootcamp) => (
+            <Card href={`/bootcamp/${bootcamp._id}`} className='mb-4'>
+              <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+                {bootcamp.name}
+              </h5>
+            </Card>
+          ))}
+      </div>
+    </section>
   );
 };
 

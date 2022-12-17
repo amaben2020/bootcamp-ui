@@ -1,14 +1,18 @@
+import { Card } from 'flowbite-react';
 import React from 'react';
 import { fetchAllBootcamps, fetchSingleBootcamp } from '../../base/services';
 import { TBootcampData } from '../../types/bootcamp';
 
 const BootCamp = ({ data: { name, description } }: TBootcampData) => {
   return (
-    <div>
-      <h2>{name}</h2>
-
-      <h4>{description}</h4>
-    </div>
+    <Card href='#' className='m-5'>
+      <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+        {name}
+      </h5>
+      <p className='font-normal text-gray-700 dark:text-gray-400'>
+        {description}
+      </p>
+    </Card>
   );
 };
 
