@@ -2,10 +2,12 @@ import React from 'react';
 import { fetchAllBootcamps, fetchSingleBootcamp } from '../../base/services';
 import { TBootcampData } from '../../types/bootcamp';
 
-const BootCamp = ({ data: { name } }: TBootcampData) => {
+const BootCamp = ({ data: { name, description } }: TBootcampData) => {
   return (
     <div>
       <h2>{name}</h2>
+
+      <h4>{description}</h4>
     </div>
   );
 };
@@ -13,7 +15,6 @@ const BootCamp = ({ data: { name } }: TBootcampData) => {
 export default BootCamp;
 
 export const getStaticProps = async ({ params }: any) => {
-  console.log(params);
   let bootcamp = {};
 
   try {
@@ -37,8 +38,6 @@ export const getStaticPaths = async () => {
   const paths = bootcamps.map((elem: any) => ({
     params: { id: elem._id.toString() },
   }));
-
-  console.log('Paths', paths);
 
   return {
     paths: paths,
