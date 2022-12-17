@@ -25,7 +25,11 @@ export const getServerSideProps = async (ctx: any) => {
   console.log(ctx.query);
   // query: ?price[gte]=999&sort=rating
 
-  const { data } = await axios.get('http://localhost:3001/api/v1/bootcamps');
+  const { price, sort } = ctx.query;
+  // look for how to make gte and lte dynamic plus - in sort
+  const { data } = await axios.get(
+    `http://localhost:3001/api/v1/bootcamps?price[gte]=${price}&sort=${sort}`
+  );
 
   return {
     props: {
