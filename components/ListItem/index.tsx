@@ -1,6 +1,7 @@
 import React from 'react';
+import { ListItems } from './types';
 
-const ListItem = ({ name, rating, description }) => {
+const ListItem = ({ name, rating, description }: ListItems) => {
   return (
     <div>
       <h2>{name}</h2>
