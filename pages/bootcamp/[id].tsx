@@ -1,11 +1,11 @@
 import React from 'react';
 import { fetchAllBootcamps, fetchSingleBootcamp } from '../../base/services';
+import { TBootcampData } from '../../types/bootcamp';
 
-const BootCamp = ({ data }) => {
-  console.log('DATA', data);
+const BootCamp = ({ data: { name } }: TBootcampData) => {
   return (
     <div>
-      <h2>{data.name}</h2>
+      <h2>{name}</h2>
     </div>
   );
 };
