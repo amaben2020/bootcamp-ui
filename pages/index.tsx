@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Checkbox, Label } from 'flowbite-react';
 import Head from 'next/head';
 import Image from 'next/image';
 import ListItem from '../components/ListItem';
@@ -9,6 +10,10 @@ export default function Home({ bootcamps }: TBootcamps) {
   console.log('Bootcamps', bootcamps);
   return (
     <div className={styles.container}>
+      <div className='flex items-center gap-2'>
+        <Checkbox id='remember' />
+        <Label htmlFor='remember'>Remember me</Label>
+      </div>
       {bootcamps?.map((elem) => (
         <ListItem name={elem.name} key={elem._id} />
       ))}
@@ -17,7 +22,7 @@ export default function Home({ bootcamps }: TBootcamps) {
 }
 
 export const getServerSideProps = async (ctx: any) => {
-  console.log(ctx);
+  console.log(ctx.query);
   // query: ?price[gte]=999&sort=rating
 
   const { data } = await axios.get('http://localhost:3001/api/v1/bootcamps');
