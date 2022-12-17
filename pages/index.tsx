@@ -3,8 +3,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import ListItem from '../components/ListItem';
 import styles from '../styles/Home.module.css';
+import { TBootcamps } from '../types/bootcamp';
 
-export default function Home({ bootcamps }: any) {
+export default function Home({ bootcamps }: TBootcamps) {
   console.log('Bootcamps', bootcamps);
   return (
     <div className={styles.container}>
