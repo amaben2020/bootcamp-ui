@@ -1,4 +1,5 @@
 import { Card } from 'flowbite-react';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 import { fetchAllBootcamps, fetchSingleBootcamp } from '../../base/services';
 import { TBootcampData } from '../../types/bootcamp';
@@ -18,11 +19,11 @@ const BootCamp = ({ data: { name, description } }: TBootcampData) => {
 
 export default BootCamp;
 
-export const getStaticProps = async ({ params }: any) => {
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   let bootcamp = {};
 
   try {
-    const data = await fetchSingleBootcamp('bootcamps', params.id);
+    const data = await fetchSingleBootcamp('bootcamps', params?.id);
 
     bootcamp = data?.data.bootcamp;
   } catch (error) {
@@ -36,7 +37,7 @@ export const getStaticProps = async ({ params }: any) => {
   };
 };
 
-export const getStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const bootcamps = (await fetchAllBootcamps('bootcamps'))?.data.data;
 
   const paths = bootcamps.map((elem: any) => ({

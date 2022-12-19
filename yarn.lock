@@ -1222,7 +1222,12 @@
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
   "version" "3.3.4"
 
-"next@13.0.6":
+"next-usequerystate@^1.7.2":
+  "integrity" "sha512-5ChbGoG/TGYRuKtpI4fKf1wsePYrO75srXwLcuPR0Nnbm7Tspfbx0L6215PRmUb9ZJCRLoXy6J3CqJRZYCot3w=="
+  "resolved" "https://registry.npmjs.org/next-usequerystate/-/next-usequerystate-1.7.2.tgz"
+  "version" "1.7.2"
+
+"next@*", "next@13.0.6":
   "integrity" "sha512-COvigvms2LRt1rrzfBQcMQ2GZd86Mvk1z+LOLY5pniFtL4VrTmhZ9salrbKfSiXbhsD01TrDdD68ec3ABDyscA=="
   "resolved" "https://registry.npmjs.org/next/-/next-13.0.6.tgz"
   "version" "13.0.6"
@@ -1435,7 +1440,7 @@
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   "version" "5.1.1"
 
-"react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^18", "react-dom@^18.2.0", "react-dom@>=16.8.0", "react-dom@18.2.0":
+"react-dom@*", "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^18", "react-dom@^18.2.0", "react-dom@>=16.8.0", "react-dom@18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
